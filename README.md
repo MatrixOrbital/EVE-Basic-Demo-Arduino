@@ -13,6 +13,13 @@ This code will illustrate:
 
 *please note, this example does not utilize touch*
 
+**IMPORTANT**
+The example is configured for a 5.0", to change the display used edit:
+
+Eve2_81x.h --> // Panel specific setup parameters
+
+The settings work for EVE2, EVE3 and EVE4 displays.
+
 ------------------------------------------------------------------
 
 **Hardware Requirements:**
