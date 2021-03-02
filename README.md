@@ -6,10 +6,10 @@ This code when executed will display MATRIX ORBITAL text and a blue circle.
 ![alt text](https://raw.githubusercontent.com/MatrixOrbital/Basic-EVE-Demo/master/Screens/Basic-EVE-Demo-2.jpg)
 
 This code will illustrate:
--EVE initilization
--Set colour
--Draw blue dot
--Write text
+*-EVE initilization
+*-Set colour
+*-Draw blue dot
+*-Write text
 
 *please note, this example does not utilize touch.
 
