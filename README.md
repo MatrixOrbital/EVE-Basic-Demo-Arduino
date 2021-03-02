@@ -1,8 +1,9 @@
-Basic EVE Arduino UNO Example code. This code when executed will display MATRIX ORBITAL text and a blue circle.
+Basic EVE Arduino UNO Example code for an [**EVE2**](https://www.matrixorbital.com/ftdi-eve/eve-ft812) or [**EVE3**](https://www.matrixorbital.com/ftdi-eve/eve-bt815-bt816) or [**EVE4**](https://www.matrixorbital.com/ftdi-eve/eve-bt817-bt818) running on an Arduino UNO.
 
+This code when executed will display MATRIX ORBITAL text and a blue circle.
 ![alt text](https://raw.githubusercontent.com/MatrixOrbital/Basic-EVE-Demo/master/Screens/Basic-EVE-Demo-2.jpg)
 
-[**EVE2**](https://www.matrixorbital.com/ftdi-eve/eve-ft812) or [**EVE3**](https://www.matrixorbital.com/ftdi-eve/eve-bt815-bt816) or [**EVE4**](https://www.matrixorbital.com/ftdi-eve/eve-bt817-bt818) running on an Arduino UNO.
+
 
 ------------------------------------------------------------------
 
