@@ -1,4 +1,4 @@
-Basic EVE Arduino UNO Example code.
+Basic EVE Arduino UNO Example code. This code when executed will display MATRIX ORBITAL text and a blue circle.
 
 ![alt text](https://raw.githubusercontent.com/MatrixOrbital/Basic-EVE-Demo/master/Screens/Basic-EVE-Demo-2.jpg)
 
@@ -9,17 +9,12 @@ Basic EVE Arduino UNO Example code.
 **Hardware Requirements:**
 
 - Designed for Matrix Orbital EVE2/3/4 SPI TFT Displays
-
-  https://www.matrixorbital.com/ftdi-eve
-  
+  https://www.matrixorbital.com/ftdi-eve  
 ![alt text](https://www.matrixorbital.com/image/cache/catalog/products/EVE/EVE3x-43A_4-600x600-600x600.png)
   
   
 -  Scoodo EVE TFT SHIELD for Arduino
-
-  https://www.matrixorbital.com/eve2-shield
-  
-  
+  https://www.matrixorbital.com/eve2-shield  
 ![alt text](https://www.matrixorbital.com/image/cache/catalog/products/EVE-Arduino-Shield-Scoodo-600x600.jpg)
 
 
@@ -30,13 +25,7 @@ Basic EVE Arduino UNO Example code.
 
   - While a copy of the library files (Eve2_81x.c and Eve2_81x.h) is included here, it will not be updated. For the most up to date files please use the files from the link above.
 
-- An Arduino shield with a connector for Matrix Orbital EVE2 displays is used to interface the Arduino to Eve.  
-  This shield includes:
-  - 20 contact FFC connector for Matrix Orbital EVE2 displays
-  - 3 pushbuttons for application control without requiring a touchscreen (useful for initial calibration)
-  - Audio amplifier and speaker for audio feedback
-  - SD card holder
-  - Additionally, the shield board is automatically level shifted for 5V Arduino and works with 3.3V Parallax Propeller ASC+ 
+
   
   Support Forums
   
