@@ -19,15 +19,15 @@ This code will illustrate:
 
 2. The example is configured for a 5.0", to change the display used edit:
 
-: Eve2_81x.h --> // Panel specific setup parameters, SELECT YOUR DISPLAY
+Eve2_81x.h --> // Panel specific setup parameters, SELECT YOUR DISPLAY
 
-:: //User selectable configurations.
-:: //#define EVE2_70
-:: #define EVE2_50
-:: //#define EVE2_43
-:: //#define EVE2_38
-:: //#define EVE2_35
-:: //#define EVE2_29
+    //User selectable configurations.
+    //#define EVE2_70
+    #define EVE2_50
+    //#define EVE2_43
+//#define EVE2_38
+//#define EVE2_35
+//#define EVE2_29
 
 The settings work for EVE2, EVE3 and EVE4 displays.
 
