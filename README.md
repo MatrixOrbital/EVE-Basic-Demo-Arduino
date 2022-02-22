@@ -15,11 +15,11 @@ This code will illustrate:
 
 **IMPORTANT**
 
-Download and rename the directory from Basic-EVE-Demo-Arduino-master to Basic-EVE-Demo-Arduino
+*Download and rename the directory from Basic-EVE-Demo-Arduino-master to Basic-EVE-Demo-Arduino
 
-The example is configured for a 5.0", to change the display used edit:
+*The example is configured for a 5.0", to change the display used edit:
 
-Eve2_81x.h --> // Panel specific setup parameters, SELECT YOUR DISPLAY
+*Eve2_81x.h --> // Panel specific setup parameters, SELECT YOUR DISPLAY
 
 //User selectable configurations.
 //#define EVE2_70
