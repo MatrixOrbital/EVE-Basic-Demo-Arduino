@@ -44,6 +44,9 @@ The settings work for EVE2, EVE3 and EVE4 displays.
   https://www.matrixorbital.com/eve2-shield  
 ![alt text](https://www.lcdforums.com/forums/download/file.php?id=1432)
 
+-  Arduino UNO, external power will be required most likely
+
+
 
 **LIBRARY**
 - This code makes use of the Matrix Orbital EVE2 Library found here: 
