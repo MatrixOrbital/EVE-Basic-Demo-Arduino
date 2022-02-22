@@ -14,6 +14,9 @@ This code will illustrate:
 *please note, this example does not utilize touch*
 
 **IMPORTANT**
+
+Download and rename the directory from Basic-EVE-Demo-Arduino-master to Basic-EVE-Demo-Arduino
+
 The example is configured for a 5.0", to change the display used edit:
 
 Eve2_81x.h --> // Panel specific setup parameters
