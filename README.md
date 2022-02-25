@@ -2,13 +2,13 @@
 
 Written for an [**EVE2**](https://www.matrixorbital.com/ftdi-eve/eve-ft812) or [**EVE3**](https://www.matrixorbital.com/ftdi-eve/eve-bt815-bt816) or [**EVE4**](https://www.matrixorbital.com/ftdi-eve/eve-bt817-bt818) running on an Arduino UNO.
 
-This code when executed will display MATRIX ORBITAL text and a blue circle.
+This code when executed will display MATRIX ORBITAL text and a circle switching between blue and red .
 ![alt text](https://raw.githubusercontent.com/MatrixOrbital/Basic-EVE-Demo/master/Screens/Basic-EVE-Demo-2.jpg)
 
 This code will illustrate:
 * EVE initilization
 * Set colour
-* Draw blue dot
+* Draw blue and red dot
 * Write text
 
 *please note, this example does not utilize touch*
