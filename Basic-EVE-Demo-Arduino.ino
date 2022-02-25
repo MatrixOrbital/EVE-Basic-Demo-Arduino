@@ -1,51 +1,53 @@
-#include <stdint.h>       // Find types like "uint8_t"
-#include <stdbool.h>      // Find type "bool"
-#include <SPI.h>          // Arduino SPI library
-#include <SD.h>           // Arduino SD card library
+//A Basic EVE Arduino UNO Example Code example
+//
+//By Matrix Orbital
+//
+//WEB
+//https://www.matrixorbital.com
+//SUPPORT
+//https://www.lcdforums.com/forums/viewforum.php?f=45
 
-#include "Eve2_81x.h"     // Matrix Orbital Eve2 Library      
+
+#include <stdint.h>       // Find types like "uint8_t"
+#include <SPI.h>          // Arduino SPI library
+#include "Eve2_81x.h"     // Matrix Orbital EVE Library      
 #include "Arduino_AL.h"   // Hardware abstraction layer for Arduino
 
-// A global buffer for use with debug messages.  It is always used up immediately so 
-// never retains initialized values.  Prevent further allocations of RAM for logging
-char LogBuf[LogBufSize];
 
-void MakeScreen_MatrixOrbital(uint8_t DotSize)
+void MakeScreen_MatrixOrbital(uint8_t R, uint8_t G,uint8_t B) //Fuction that will draw a circle and display text
 {
-	Send_CMD(CMD_DLSTART);                   //Start a new display list
- 	Send_CMD(VERTEXFORMAT(0));               //setup VERTEX2F to take pixel coordinates
-	Send_CMD(CLEAR_COLOR_RGB(0, 0, 0));      //Determine the clear screen color
-	Send_CMD(CLEAR(1, 1, 1));	              //Clear the screen and the curren display list
-	Send_CMD(COLOR_RGB(26, 26, 192));        // change colour to blue
-	Send_CMD(POINT_SIZE(DotSize * 16));      // set point size to DotSize pixels. Points = (pixels x 16)
-	Send_CMD(BEGIN(POINTS));                 // start drawing point
-	Send_CMD(TAG(1));                        // Tag the blue dot with a touch ID
-	Send_CMD(VERTEX2F(DWIDTH / 2, DHEIGHT / 2));     // place blue point
-	Send_CMD(END());                         // end drawing point
-	Send_CMD(COLOR_RGB(255, 255, 255));      //Change color to white for text
-	Cmd_Text(DWIDTH / 2, DHEIGHT / 2, 30, OPT_CENTER, " MATRIX         ORBITAL"); //Write text in the center of the screen
-	Send_CMD(DISPLAY());                     //End the display list
-	Send_CMD(CMD_SWAP);                      //Swap commands into RAM
-	UpdateFIFO();                            // Trigger the CoProcessor to start processing the FIFO
+  Send_CMD(CMD_DLSTART);                          //Start a new display list
+  Send_CMD(VERTEXFORMAT(0));                      //Setup VERTEX2F to take pixel coordinates
+  Send_CMD(CLEAR_COLOR_RGB(0, 0, 0));             //Determine the clear screen color
+  Send_CMD(CLEAR(1, 1, 1));                       //Clear the screen and the curren display list
+  Send_CMD(COLOR_RGB(R, G, B));                    //Change colour to blue
+  Send_CMD(POINT_SIZE(32 * 16));                  //Set point size to DotSize pixels. Points = (pixels x 16)
+  Send_CMD(BEGIN(POINTS));                        //Start drawing point
+  Send_CMD(TAG(1));                               //Tag the blue dot with a touch ID
+  Send_CMD(VERTEX2F(DWIDTH / 2, DHEIGHT / 2));    //Place blue point
+  Send_CMD(END());                                //End drawing point
+  Send_CMD(COLOR_RGB(255, 255, 255));             //Change color to white for text
+  Cmd_Text(DWIDTH / 2, DHEIGHT / 2, 30, OPT_CENTER, " MATRIX         ORBITAL"); //Write text in the center of the screen
+  Send_CMD(DISPLAY());                            //End the display list
+  Send_CMD(CMD_SWAP);                             //Swap commands into RAM
+  UpdateFIFO();                                   //Trigger the CoProcessor to start processing the FIFO
 }
 
-void setup()
+
+
+void setup()  //run once, setup
 {
-  GlobalInit();
-  FT81x_Init();
-  MakeScreen_MatrixOrbital(30);
-  wr8(REG_PWM_DUTY + RAM_REG,128);
+  GlobalInit();                                   //EVE display interface initialization
+  FT81x_Init();                                   //Reset and initialize the EVE
+  wr8(REG_PWM_DUTY + RAM_REG,128);                //Set the backlight to full brightness
 }
 
-void loop()
+void loop() //main loop
 {
-  MainLoop(); // jump to "main()"
-}
-void MainLoop(void)
-{
-  while(1)
-  {
-  }
+  MakeScreen_MatrixOrbital(0, 0, 255);            //Draw a blue circle
+  delay (1000);                                   //Delay for 1000ms
+  MakeScreen_MatrixOrbital(255, 0, 0);            //Draw a red circle
+  delay (1000);                                   //Delay for 1000ms
 }
 
 // ************************************************************************************
@@ -62,17 +64,14 @@ void MainLoop(void)
 // compiling on (in general and within reason)                                        *
 // ************************************************************************************
 
+// Matrix Orbital EVE display interface initialization
 void GlobalInit(void)
 {
-  Serial.begin(115200);
-  while (!Serial) {;}                    // wait for serial port to connect.
-
-  // Matrix Orbital Eve display interface initialization
-  pinMode(EvePDN_PIN, OUTPUT);            // Pin setup as output for Eve PDN pin.
-  digitalWrite(EvePDN_PIN, LOW);          // Apply a resetish condition on Eve
+  pinMode(EvePDN_PIN, OUTPUT);            // Pin setup as output for EVE PDN pin
+  digitalWrite(EvePDN_PIN, LOW);          // Apply a resetish condition on EVE
   pinMode(EveChipSelect_PIN, OUTPUT);     // SPI CS Initialization
-  digitalWrite(EveChipSelect_PIN, HIGH);  // Deselect Eve
-  pinMode(EveAudioEnable_PIN, OUTPUT);    // Audio Enable PIN
+  digitalWrite(EveChipSelect_PIN, HIGH);  // Deselect EVE
+  pinMode(EveAudioEnable_PIN, OUTPUT);    // Audio Enable pin
   digitalWrite(EveAudioEnable_PIN, LOW);  // Disable Audio
   SPI.begin();                            // Enable SPI
 }
