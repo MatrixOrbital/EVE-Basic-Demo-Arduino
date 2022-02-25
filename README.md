@@ -3,7 +3,7 @@
 Written for an [**EVE2**](https://www.matrixorbital.com/ftdi-eve/eve-ft812) or [**EVE3**](https://www.matrixorbital.com/ftdi-eve/eve-bt815-bt816) or [**EVE4**](https://www.matrixorbital.com/ftdi-eve/eve-bt817-bt818) running on an Arduino UNO.
 
 This code when executed will display MATRIX ORBITAL text and a circle switching between blue and red .
-![alt text](https://raw.githubusercontent.com/MatrixOrbital/Basic-EVE-Demo/master/Screens/Basic-EVE-Demo-2.jpg)
+![alt text](https://www.lcdforums.com/forums/download/file.php?id=1535)
 
 This code will illustrate:
 * EVE initilization
