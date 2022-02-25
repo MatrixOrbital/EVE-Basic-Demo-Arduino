@@ -1,6 +1,17 @@
 #ifndef __EVE81X_H
 #define __EVE81X_H
 
+// ==========================
+// SELECT YOUR DISPLAY HERE |
+// ==========================
+
+//#define EVE2_70
+//#define EVE2_50
+//#define EVE2_43
+//#define EVE2_38
+#define EVE2_35
+//#define EVE2_29
+
 // =====================================================================================
 // Required Functions - Hardware driver or otherwise environment specific. Abstracted  |
 // and found in ArduinoAL.h or whatever the abstraction layer is called in your world. |
@@ -356,14 +367,6 @@ void CoProWrCmdBuf(const uint8_t *buffer, uint32_t count);
 uint32_t WriteBlockRAM(uint32_t Add, const uint8_t *buff, uint32_t count);
 
 // Panel specific setup parameters
-  
-//User selectable configurations.
-//#define EVE2_70
-#define EVE2_50
-//#define EVE2_43
-//#define EVE2_38
-//#define EVE2_35
-//#define EVE2_29
 
 #ifdef EVE2_70
 #define DWIDTH     800
