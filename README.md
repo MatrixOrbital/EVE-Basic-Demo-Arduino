@@ -8,7 +8,7 @@ This code when executed will display MATRIX ORBITAL text and a circle switching 
 This code will illustrate:
 * EVE initilization
 * Set colour
-* Draw blue and red dot
+* Draw blue and red circle
 * Write text
 
 *please note, this example does not utilize touch*
